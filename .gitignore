@@ -4,3 +4,4 @@
 node_modules
 target
 build
+.dst_admin_db.json
