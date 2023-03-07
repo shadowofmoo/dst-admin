@@ -1,76 +1,37 @@
-# dst-admin:Steam Don't Starve Together Management System
-> dst-admin is the Don't Starve Together Management System, 
-it is a web program written in Java language, which is powerful, 
-convenient and simple to use, and reduces the difficulty of server construction
+# dst-admin:Steam平台饥荒联机版管理后台
+> 工作之余，发挥余热，弄了一个steam平台的Don't Starve Together 饥荒联机版管理后台，支持傻瓜式服务器部署，方便有兴趣折腾服务器的小伙伴可以快速的搭建服务器。
 
+## 支持的功能
+1.  支持一键启动停止地面和洞穴服务
+2.  支持服务器资源监控
+3.  支持饥荒房间设置以及世界和MOD设置
+4.  支持存档管理，存档恢复，自动备份
+5.  支持无人值守时自动更新游戏
+6.  支持设置额外管理员或玩家黑名单
+7.  支持饥荒运行日志查看
+8.  支持上传本地存档
+9.  支持远程控制台，可在管理后台踢人、回滚、重置世界
 
-##  See the [中文文档](/README-zh.md) for Chinese readme.
+## 注意事项
+1.  服务默认监听端口8080
+2.  默认用户名/密码 admin/123456
+3.  饥荒监听端口**10888，10998，10999**（建议开放所有端口，避免一些问题）
 
-## The following are features:
-1.  Start or close ground/cave at one-click
-2.  Server system resources monitor
-3.  Don't Starve Together ground/cave/mod settings
-4.  Game Archive management,recover,auto backup
-5.  Support auto update game
-6.  Support Settings extra admin or players' blacklist
-7.  Support viewing game logs
-8.  Support uploading local archives
-9.  Long-range control,kick player,rollback,reset world
+## docker版本部署请参考：[点击查看](https://github.com/qinming99/dst-admin/blob/master/docker/README-zh.md)
 
-## Environment requirement
-1.  Operating system  **Ubuntu** （ 16.04 , 18.04 has been tested，other Ubuntu versions are not ）
-2.  Java **JDK 1.8**
+## 如果需要租赁成品服务器： [点击查看](http://download.tugos.cn/img/taobao_ad.jpg)
 
-## Matters need attention
-1.  Default server port 8080
-2.  Default user name/password admin/123456
-3.  Don't Starve Together monitoring port**10888，10998，10999**（It is suggested to open all port to avoid some matters.）
+## TODOLIST
+- [ ] 升级JDK版本到JDK17
+- [ ] 升级SpringBoot版本到3.0.6
+- [ ] 使用jib构建docker镜像
+- [ ] 使用docker compose方式启动饥荒服务器，将steamcmd和饥荒服务器分离
+- [ ] 使用github action自动构建docker镜像，自动发布到docker hub、阿里云镜像仓库，加快国内用户搭建服务器速度
+- [ ] 将前端页面改为react
 
-## Fast beginning
-###  Install jdk1.8 on Ubuntu server
-```
-#Update software :
-sudo apt-get update
-#Install openJDK1.8
-sudo apt-get install -y openjdk-8-jdk
-#Check version
-java -version
-if  showing "openjdk version "1.8.0_252"well, finish 
-```      
-###  Download the newest dst-admin 
-
-```bash
-wget http://clouddn.tugos.cn/release/dst-admin-1.5.0.jar -O dst-admin.jar
-```
-
-
-###  Start dst-admin
-```
-#Start 
-java -jar dst-admin.jar 
-```
-###  Start Don't Starve Together installation script，install Don't Starve Together client
-```
-#It will release install.sh after starting to install steam and Don't Starve Together client 
-#，executes program may requires ur password（probably becuase Internet problem lead to executing the scripts for several times）
-./install.sh
-```
-###  Use dstStart.sh to control dst-admin 
-```
-#Execute dstStart.sh as the tips
-./dstStart.sh
-```
-
-## Docker Support：[link](https://github.com/qinming99/dst-admin/blob/master/docker/README.md)
-
-## Preview 
+## 预览图
 
 ![img](https://github.com/qinming99/dst-admin/blob/master/images/image1.png)
 ![img](https://github.com/qinming99/dst-admin/blob/master/images/image2.png)
 ![img](https://github.com/qinming99/dst-admin/blob/master/images/yanshi.gif)
-
-
-## Thanks~
-
-- <a href="https://www.jetbrains.com/?from=dst-admin"><img src="https://github.com/qinming99/dst-admin/blob/master/images/jet-logo.jpg" width="100px" alt="jetbrains">**Thanks for JetBrains affording free License**</a>
 
